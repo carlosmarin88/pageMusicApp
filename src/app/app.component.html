@@ -11,15 +11,17 @@
     </a>
   </h1>
   <nav id="navigation">
-    <a href="#">
+    <a href="#" [routerLinkActive]="['actived']">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       Buscar
     </a>
-    <a href="#">
+    <!-- routerLinkeActive, agrego una clase cuando estoy sobre el -->
+    <a [routerLink]="['/artists' , 1]"
+      [routerLinkActive]="['actived']">
       <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
       Artistas
     </a>
-    <a href="#">
+    <a href="#" [routerLinkActive]="['actived']">
       <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
       Albums
     </a>
@@ -33,7 +35,8 @@
       {{identity.name}} {{identity.surname}}
     </span>
     <!--es una directiva -->
-    <a [routerLink]="['/mis-datos']">
+    <a [routerLink]="['/mis-datos']"
+     [routerLinkActive]="['actived']">
       <span class="glyphicon glyphicon-cog"></span>
       Mis Datos
     </a>
@@ -45,7 +48,7 @@
 </div>
 
 <!--crear contenedor central -->
-<div *ngIf="identity" class="central col-lg-11">
+<div [class.hidden]="!identity" class="central col-lg-11">
   <!-- se va a cargar los componentes asociado de cada ruta -->
   <router-outlet></router-outlet>
 </div>

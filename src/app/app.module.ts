@@ -6,14 +6,15 @@ import {routing, appRoutingProviders} from './app.routing';
 
 import { AppComponent } from './app.component';
 import {UserEditComponent} from './components/user-edit.component';
-
+import {ArtistListComponent} from './components/artist-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     /* puedo acceder a sus directiva de cualquier otro 
     componente dentro de su plantilla */
-    UserEditComponent
+    UserEditComponent,
+    ArtistListComponent
   ],
   imports: [
     BrowserModule,
