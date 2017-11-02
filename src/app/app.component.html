@@ -4,10 +4,13 @@
 -->
 <div *ngIf="identity" class="navigation col-lg-1">
   <!-- col-lg-1 lo hace una barra de navegacion estrecha -->
-  <h1>
-    {{title}}
+  <h1 class="head-title">
+    <a [routerLink]="['/']">
+      <span class="glyphicon glyphicon-music"></span>
+      {{title}}    
+    </a>
   </h1>
-  <nav class="navigation">
+  <nav id="navigation">
     <a href="#">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       Buscar
@@ -21,35 +24,33 @@
       Albums
     </a>
   </nav>
-  <nav class="user_logged">
+  <nav id="user_logged" class="user-logged">
     <div class="user-image" >
-      <img id="image-logged" 
-        src="{{url + 'get-image-user/' + identity.image}}" style="width:50px;">
+      <img id="image-logged" class="image-logged" 
+        src="{{url + 'get-image-user/' + identity.image}}">
     </div>
     <span id="identity_name">
       {{identity.name}} {{identity.surname}}
-    </span>
-    <span class="btn btn-warning" (click)="logout()">
-      Cerrar sesión
     </span>
     <!--es una directiva -->
     <a [routerLink]="['/mis-datos']">
       <span class="glyphicon glyphicon-cog"></span>
       Mis Datos
     </a>
+    <a (click)="logout()" class="btn-logout">
+        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+        Salir
+    </a>
   </nav>
 </div>
 
-<div class="clearfix"></div>
-
 <!--crear contenedor central -->
 <div *ngIf="identity" class="central col-lg-11">
-  <p>Estas logueado en la aplicacion</p>
   <!-- se va a cargar los componentes asociado de cada ruta -->
   <router-outlet></router-outlet>
 </div>
 
-<div class="col-lg-12" *ngIf="!identity">
+<div class="col-lg-11" *ngIf="!identity">
   <div class="col-lg-6">
     <h1>Identificate</h1>
     <!-- muestro un mensaje si el usuario no pudo loguearse -->
