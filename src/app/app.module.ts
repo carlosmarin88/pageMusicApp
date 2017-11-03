@@ -7,6 +7,8 @@ import {routing, appRoutingProviders} from './app.routing';
 import { AppComponent } from './app.component';
 import {UserEditComponent} from './components/user-edit.component';
 import {ArtistListComponent} from './components/artist-list.component';
+import {HomeComponent} from './components/home.component';
+import {ArtistAddComponent} from './components/artist-add.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import {ArtistListComponent} from './components/artist-list.component';
     /* puedo acceder a sus directiva de cualquier otro 
     componente dentro de su plantilla */
     UserEditComponent,
-    ArtistListComponent
+    ArtistListComponent,
+    HomeComponent,
+    ArtistAddComponent
   ],
   imports: [
     BrowserModule,
