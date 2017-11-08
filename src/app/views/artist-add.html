@@ -1,24 +1,30 @@
 <div class="col-lg-6">
-<h1>
-    {{titulo}}
-</h1>
-<!-- #formArtist es el nombre del formulario -->
-<form #formArtist="ngForm" (ngSubmit)="onSubmit">
-    <p>
-        <label>Nombre:</label>
-        <input type="text" class="form-control" #name="ngModel" name="name" [(ngModel)]="artist.name" required/>
-        <span *ngIf="!name.valid && name.touched">
-            El nombre es obligatorio
-        </span>
-    </p>
-    <p>
-        <label>Descripción</label>
-        <textarea #description="ngModel" name="description" class="form-control" [(ngModel)]="artist.description" required cols="30"
-            rows="10"></textarea>
-        <span *ngIf="!description.valid && description.touched">
-            La descripcion es obligatoria
-        </span>
-    </p>
-    <input type="submit" value="{{titulo}}" class="btn btn-success" [disabled]="!formArtist.form.valid" />
-</form>
+    <h1>
+        {{titulo}}
+    </h1>
+    <!--se agrega div para mensaje de alerta -->
+    <div *ngIf="alertMessage">
+        <div class="alert alert-info">
+            {{alertMessage}}
+        </div>
+    </div>
+    <!-- #formArtist es el nombre del formulario -->
+    <form #formArtist="ngForm" (ngSubmit)="onSubmit()">
+        <p>
+            <label>Nombre:</label>
+            <input type="text" class="form-control" #name="ngModel" name="name" [(ngModel)]="artist.name" required/>
+            <span *ngIf="!name.valid && name.touched">
+                El nombre es obligatorio
+            </span>
+        </p>
+        <p>
+            <label>Descripción</label>
+            <textarea #description="ngModel" name="description" class="form-control" [(ngModel)]="artist.description" required cols="30"
+                rows="10"></textarea>
+            <span *ngIf="!description.valid && description.touched">
+                La descripcion es obligatoria
+            </span>
+        </p>
+        <input type="submit" value="{{titulo}}" class="btn btn-success" [disabled]="!formArtist.form.valid" />
+    </form>
 </div>
