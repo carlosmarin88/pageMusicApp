@@ -7,6 +7,7 @@ import { UserEditComponent } from './components/user-edit.component';
 //import artist
 import {ArtistListComponent} from './components/artist-list.component';
 import {ArtistAddComponent} from './components/artist-add.component';
+import {ArtistEditComponent} from './components/artist-edit.components';
 /*configuramos las rutas */
 const appRoutes : Routes = [
     /* te redireciona a una url en especials 
@@ -20,6 +21,7 @@ const appRoutes : Routes = [
     {path: 'artistas/:page', component : ArtistListComponent},
     {path:'mis-datos',component : UserEditComponent},
     {path:'crear-artista', component : ArtistAddComponent},
+    {path: 'editar-artista/:id',component : ArtistEditComponent},
     /*a cualquer ruta que le pegue y no este definida */
     {path: '**', component : HomeComponent}
 ];
