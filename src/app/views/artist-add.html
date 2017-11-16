@@ -1,4 +1,4 @@
-<div class="col-lg-6">
+<div class="col-lg-6" *ngIf="identity && identity.role == 'ROLE_ADMIN'" >
     <h1>
         {{titulo}}
     </h1>
@@ -37,4 +37,11 @@
 
         <input type="submit" value="{{titulo}}" class="btn btn-success" [disabled]="!formArtist.form.valid" />
     </form>
+</div>
+
+<div class="col-lg-6" *ngIf="!identity || identity.role!='ROLE_ADMIN'" >
+    <h1>Error</h1>
+        <p>
+            No tienes previlegio para esta acción
+        </p>
 </div>
