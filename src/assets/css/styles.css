@@ -118,3 +118,28 @@ html, body{
 .artist-item .artist-name a:hover{
     color : #84BD00;
 }
+
+#artist-head-card .image{
+    width: 160px;
+    height: 160px;
+    /*para que no se vea si la imagen es mas grande que el contenedor*/
+    overflow : hidden;
+    float: left;
+    margin-right: 30px;
+}
+
+#artist-head-card .image img{
+    height: 160px;
+}
+
+.central{
+    height: 100%;
+    overflow-y:scroll;
+}
+
+.seguro{
+    margin-top: -30px;
+    background: #222326;
+    position: absolute;
+    height: 40px;
+}

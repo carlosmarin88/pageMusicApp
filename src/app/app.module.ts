@@ -10,6 +10,7 @@ import {ArtistListComponent} from './components/artist-list.component';
 import {HomeComponent} from './components/home.component';
 import {ArtistAddComponent} from './components/artist-add.component';
 import {ArtistEditComponent} from './components/artist-edit.components';
+import {ArtistDetailComponent} from './components/artist-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {ArtistEditComponent} from './components/artist-edit.components';
     ArtistListComponent,
     HomeComponent,
     ArtistAddComponent,
-    ArtistEditComponent
+    ArtistEditComponent,
+    ArtistDetailComponent
   ],
   imports: [
     BrowserModule,
