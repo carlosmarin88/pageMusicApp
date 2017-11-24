@@ -3,6 +3,7 @@ import { GLOBAL } from './../services/global';
 import { UserService } from './../services/user.service';
 import { ArtistService } from './../services/artist.service';
 import { Component, OnInit } from '@angular/core';
+
 //importamos los elementos del router para trabajar redireccionar 
 // y recojer parametros de la url
 import { Router, ActivatedRoute, Params } from '@angular/router';

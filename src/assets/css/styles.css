@@ -70,19 +70,22 @@ html, body{
     cursor: pointer;
 }
 
-.artist_image_for_edit img{
+.artist_image_for_edit img,
+.album_image_for_edit img{
     width:150px;
 }
 /*crear tarjeta para mostrar la lista de artistas*/
 
-.artists-list{
+.artists-list,
+.albums-list{
     margin : 0px;
     padding : 0px;
     margin-top:30px;
     list-style: none;
 }
 
-.artist-item{
+.artist-item,
+.album-item{
     width: 23%;
     margin: 0px;
     padding: 0px;
@@ -92,7 +95,12 @@ html, body{
     margin-top : 20px;
 }
 
-.artist-item .artist-image{
+.album-item{
+ height: 357px;   
+}
+
+.artist-item .artist-image,
+.album-item .album-image{
     height: 245px;
     width: 100%;
     overflow: hidden;
@@ -101,25 +109,31 @@ html, body{
 
 .artist-item .artist-image img{
     height: 100%;
+}
+
+.album-item .album-image img{
     width: 100%;
 }
 
-.artist-item .artist-name{
+.artist-item .artist-name,
+.album-item .album-name{
     color : white;
     padding: 10px;
     background: #222326;
 }
 
-.artist-item .artist-name a{
+
+
+.artist-item .artist-name a,
+.album-item .album-name a{
     color: white;
     text-decoration: none;
 }
 
-.artist-item .artist-name a:hover{
-    color : #84BD00;
-}
 
-#artist-head-card .image{
+/*DETALLE DE ARTISTA Y ALBUM*/
+#artist-head-card .image,
+#album-head-card .image{
     width: 160px;
     height: 160px;
     /*para que no se vea si la imagen es mas grande que el contenedor*/
@@ -128,7 +142,8 @@ html, body{
     margin-right: 30px;
 }
 
-#artist-head-card .image img{
+#artist-head-card .image img,
+#album-head-card .image img{
     height: 160px;
 }
 
@@ -143,3 +158,4 @@ html, body{
     position: absolute;
     height: 40px;
 }
+
