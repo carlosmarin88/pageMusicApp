@@ -1,9 +1,16 @@
 <div class="col-lg-6" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
     <h1>{{titulo}}</h1>
+
+    <div *ngIf="alertMessage" >
+        <div class="alert alert-info">
+            {{alertMessage}}
+        </div>
+    </div>
+
     <form #formSong="ngForm" (ngSubmit)="onSubmit()">
         <p>
             <label>Número:</label>
-            <input type="text" #number="ngModel" name="number" [(ngModel)]="song.number" required class="form-control" />
+            <input type="text" #number="ngModel" name="numbedsar" [(ngModel)]="song.number" required class="form-control" />
             <span *ngIf="!number.valid && number.touched">
                 El número es obligatorio
             </span>

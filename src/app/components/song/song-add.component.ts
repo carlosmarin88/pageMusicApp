@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { GLOBAL } from '../../services/global';
 import { UserService } from '../../services/user.service';
+import { SongService } from '../../services/song/song.service';
 import { Song } from '../../models/song';
 
 @Component({
     selector: 'song-add',
     templateUrl: '../../views/song/song-add.html',
-    providers: [UserService]
+    providers: [UserService, SongService]
 })
 export class SongAddComponent implements OnInit {
 
@@ -20,6 +21,7 @@ export class SongAddComponent implements OnInit {
 
     constructor(
         private _userService: UserService,
+        private _songService: SongService,
         private _route: ActivatedRoute,
         private _router: Router
     ) {
@@ -40,6 +42,25 @@ export class SongAddComponent implements OnInit {
             let album_id = params['album'];
             this.song.album = album_id;
 
+            this._songService.addSong(this.token,this.song).subscribe(
+                response=>{
+                    if(!response.song){
+                        this.alertMessage = 'Error en el servidor';
+                    }else{
+                        this.alertMessage = 'El fichero se ha creado correctamente!';
+                        this.song = response.song;
+                        //this._router.navigate(['/']);
+                    }
+                },
+                error=>{
+                    let errorMessage = <any> error;
+                    if(errorMessage!=null){
+                        let body = JSON.parse(error._body);
+                        this.alertMessage = body.message;
+                        console.error(error);
+                    }
+                }
+            );
         });
 
         console.log('cancion', this.song);

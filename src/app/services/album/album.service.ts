@@ -44,7 +44,6 @@ export class AlbumService {
             'Content-Type': 'application/json',
             'Authorization': token
         });
-        console.log('edito el album');
         return this._http.put(this.url + 'album/' + id, params, { headers: headers })
             .map(res => {
                 console.log(res.json());
