@@ -49,7 +49,7 @@ export class SongAddComponent implements OnInit {
                     }else{
                         this.alertMessage = 'El fichero se ha creado correctamente!';
                         this.song = response.song;
-                        //this._router.navigate(['/']);
+                        this._router.navigate(['/editar-tema',response.song._id]);
                     }
                 },
                 error=>{
