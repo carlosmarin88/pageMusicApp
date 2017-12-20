@@ -49,4 +49,35 @@ export class SongService {
         return this._http.put(this.url+'song/' + id,params,options)
             .map(res=>res.json());
     }
+
+    public getSongs(token : string, albumId:string =null){
+
+        let headers = new Headers({
+            'Content-Type' : 'application/json',
+            'Authorization' : token
+        });
+
+        let options = new RequestOptions({headers : headers});
+
+        if(albumId==null){
+            return this._http.get(this.url + 'songs',options)
+            .map(res=>res.json());
+        }else{
+            return this._http.get(this.url+'songs/'+albumId,options)
+            .map(res =>res.json());
+        }
+    }
+
+
+    public deleteSong(token:string, id:string){
+        let headers = new Headers({
+            'Content-Type' : 'application/json',
+            'Authorization' : token
+        });
+
+        let options = new RequestOptions({headers : headers});
+
+        return this._http.delete(this.url+'song/'+id,options)
+            .map(res=>res.json());
+    }
 }

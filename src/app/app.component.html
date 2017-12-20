@@ -51,6 +51,9 @@
 <div [class.hidden]="!identity" class="central col-lg-11">
   <!-- se va a cargar los componentes asociado de cada ruta -->
   <router-outlet></router-outlet>
+
+  <div class="clearFix"></div>
+  <player class="player" *ngIf="identity" ></player>
 </div>
 
 <div class="col-lg-11" *ngIf="!identity">
