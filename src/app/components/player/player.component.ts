@@ -46,6 +46,13 @@ import {GLOBAL} from '../../services/global';
 
     public ngOnInit(){
         console.log('Player cargado...');
+        
+        let song = JSON.parse(localStorage.getItem('sound_song'));
+        if(song){
+            this.song=song;
+        }else{
+            this.song = new Song(1, '', '', '', '');
+        }
     }
  }
 

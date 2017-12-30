@@ -93,11 +93,13 @@ html, body{
     height: 317px;
     border: 1px solid #444;
     margin-left: 20px;
+    background: #222326;
   /*  margin-top : 20px;*/
 }
 
 .album-item{
- height: 357px;   
+ height: 300px;   
+ margin-bottom: 20px;
 }
 
 .artist-item .artist-image,
@@ -106,6 +108,16 @@ html, body{
     width: 100%;
     overflow: hidden;
     background: black;
+}
+
+
+.album-item .album-image{
+    height: 188px;
+}
+
+.albums-list{
+    min-height: 800px;
+    margin-bottom: 715px;
 }
 
 .artist-item .artist-image img{
@@ -165,6 +177,8 @@ html, body{
 #songs-list{
     margin : 0px;
     padding : 0px;
+    min-height: 800px;
+    padding-bottom: 200px;
 }
 
 .song-item{
@@ -192,7 +206,7 @@ html, body{
     margin-right: -131px;
 }
 
-/*player*/
+/*PLAYER*/
 
 .player{
     background-color: #1C1C1F;
@@ -202,6 +216,7 @@ html, body{
     padding: 20px;
     margin-left: -15px;
     border-left: 1px solid #444;
+    color : gray;
 
 }
 
